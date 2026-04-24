@@ -95,7 +95,8 @@ const PHOTOS = [
   "https://scontent-waw2-1.xx.fbcdn.net/v/t51.82787-15/670886170_17992892336948091_6280598510410236925_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=K9mlOK6xM4sQ7kNvwHec9Pd&_nc_oc=AdpJQISdqWFqTD8eKE5SC8OjygL083Z14rGZFX21PAWIfq1AituyMnFIbMuNvpJImUY&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=Kepc_TbXu505H3JOvGb1ZQ&oh=00_Af1z5zNU_wlAvIf6Zhj2RZSvQ0ucrWchhc1OW5PnPRpG7w&oe=69F0D9A0",
   "https://scontent-waw2-1.xx.fbcdn.net/v/t51.82787-15/669544545_17992067972948091_6145681781996285628_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=iO8A2f7SlP0Q7kNvwHiNplr&_nc_oc=AdoOIxF2c-SjsrpDwoWOLtI4so5pEgr_veI61T1LgZj-icV7a9VJqmyUiVRda5d8QJo&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=Nz10NJ1hrGqWgGyoqcwkiQ&oh=00_Af3Xc7wFIvaTOeG3R6SSQlyIIkiKy08xG-5DxDT5ZBSj1w&oe=69F0E17D",
   "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/647684561_1680472580245086_1532743783820094339_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=b895b5&_nc_ohc=61G-gpcSP2QQ7kNvwGAiAQw&_nc_oc=AdqIAoRIOwBLqKkm4pmxpovBawaKa9XHxMVHjhQ70HlVjBHM1B9dcNB7YH6wIgV4uQA&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=5biM9f3uIV0gCL7wy-14-A&oh=00_Af2HbQkeCe4I9ygt09oP7hqJYkJSRG3hl298eQ1HMdCl6Q&oe=69F0EB72",
-  "https://lh3.googleusercontent.com/geougc-cs/AMG9lERvnAJWXUAMg7goWLg3DyFINi-43eTeRcOjeNIyBKaS_9vazOOkTVg__AxDNRAPMSaj3Hkm8Em8QgUln_FCxGrNgcG-KeyhUspbA3Rh75ACcn1uobJ99tzkBG9pLmlYfBNHY0K_nDk-4rNy=w300-h450-p"
+  "https://lh3.googleusercontent.com/geougc-cs/AMG9lERvnAJWXUAMg7goWLg3DyFINi-43eTeRcOjeNIyBKaS_9vazOOkTVg__AxDNRAPMSaj3Hkm8Em8QgUln_FCxGrNgcG-KeyhUspbA3Rh75ACcn1uobJ99tzkBG9pLmlYfBNHY0K_nDk-4rNy=w300-h450-p",
+  "https://scontent-waw2-1.xx.fbcdn.net/v/t51.82787-15/649224070_17987420708948091_583721640206258828_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=nM9EPq4jkBkQ7kNvwHTVZEI&_nc_oc=AdosbCP883T5CIOfBRDbi6qyqmmRsuJyDQ49Ut41ursG5nlRHAFhNkee7gJRBg_Uwb8&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=_i2vadvp33d_ZchsChEqpQ&oh=00_Af06Ec-3hMgjrRzLOv_f-UprgdWnJxA99yE1qPGeDLKTvg&oe=69F0E7A7"
 ];
 
 const NewsAlert = () => (
@@ -367,53 +368,41 @@ export default function App() {
       </section>
 
       {/* Gallery Section */}
-      <section id="galeria" className="py-24 px-6 bg-karczma-dark text-white">
+      <section id="galeria" className="pt-24 pb-32 px-6 bg-karczma-dark text-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16 relative z-10">
             <div className="text-left">
               <h2 className="text-5xl md:text-7xl font-serif font-black italic mb-4">Galeria</h2>
               <p className="text-[10px] font-sans font-black uppercase tracking-[0.4em] opacity-40">Zobacz naszą pasję do jedzenia</p>
             </div>
-            <a href="https://www.facebook.com/naszakarczmamilicz" target="_blank" className="flex items-center gap-2 group text-xs font-sans font-black tracking-widest uppercase mb-2">
+            <a href="https://www.facebook.com/naszakarczmamilicz" target="_blank" className="flex items-center gap-2 group text-xs font-sans font-black tracking-widest uppercase mb-2 hover:text-karczma-accent transition-colors">
               Więcej na Facebook <ChevronRight className="group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-auto md:h-[800px]">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="md:col-span-8 overflow-hidden rounded-3xl relative group aspect-[4/3] md:aspect-auto"
-            >
-              <img src={PHOTOS[3]} alt="Foto 1" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 transform-gpu backface-hidden" />
-            </motion.div>
-            <div className="md:col-span-4 grid grid-cols-2 md:grid-cols-1 md:grid-rows-2 gap-4">
+ 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[PHOTOS[3], PHOTOS[4], PHOTOS[0], PHOTOS[5]].map((photo, index) => (
               <motion.div 
+                key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: 0.1 }}
-                className="overflow-hidden rounded-3xl group aspect-square md:aspect-auto"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: index * 0.1 }}
+                className="overflow-hidden rounded-3xl group aspect-square shadow-xl relative"
               >
-                <img src={PHOTOS[4]} alt="Foto 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 transform-gpu backface-hidden" />
+                <img 
+                  src={photo} 
+                  alt={`Galeria ${index + 1}`} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 transform-gpu backface-hidden will-change-transform" 
+                />
               </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: 0.2 }}
-                className="overflow-hidden rounded-3xl group aspect-square md:aspect-auto"
-              >
-                <img src={PHOTOS[0]} alt="Foto 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 transform-gpu backface-hidden" />
-              </motion.div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Contact & Map Section */}
-      <section id="kontakt" className="py-24 px-6 bg-karczma-paper">
+      <section id="kontakt" className="pt-32 pb-24 px-6 bg-karczma-paper">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16">
             
