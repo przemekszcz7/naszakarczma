@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Inter:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-karczma-dark: #2d1b10;
+  --color-karczma-accent: #8b4513;
+  --color-karczma-gold: #c5a059;
+  --color-karczma-beige: #fdfaf5;
+  --color-karczma-paper: #f4e4d4;
+}
+
+@layer base {
+  body {
+    @apply bg-karczma-beige text-karczma-dark font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
