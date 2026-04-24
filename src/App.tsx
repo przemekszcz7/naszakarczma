@@ -183,7 +183,7 @@ export default function App() {
   const [activeMenuCategory, setActiveMenuCategory] = useState(Object.keys(MENU_DATA)[0]);
 
   return (
-    <div className="min-h-screen bg-karczma-beige selection:bg-karczma-gold selection:text-white flex flex-col">
+    <div className="min-h-screen bg-karczma-beige selection:bg-karczma-gold selection:text-white flex flex-col overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-karczma-beige/90 backdrop-blur-md border-b border-karczma-dark/10">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -402,7 +402,7 @@ export default function App() {
       </section>
 
       {/* Contact & Map Section */}
-      <section id="kontakt" className="pt-32 pb-24 px-6 bg-karczma-paper">
+      <section id="kontakt" className="pt-32 pb-24 px-6 bg-karczma-paper overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16">
             

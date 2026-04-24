@@ -14,7 +14,11 @@
 
 @layer base {
   body {
-    @apply bg-karczma-beige text-karczma-dark font-sans antialiased;
+    @apply bg-karczma-beige text-karczma-dark font-sans antialiased overflow-x-hidden;
+  }
+  
+  html {
+    @apply overflow-x-hidden;
   }
   
   h1, h2, h3, h4 {
